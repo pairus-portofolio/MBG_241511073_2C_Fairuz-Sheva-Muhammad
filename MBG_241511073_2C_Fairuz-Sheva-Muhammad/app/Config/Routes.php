@@ -23,3 +23,6 @@ $routes->get('/logout', 'Auth::logout');
 
 // Dashboard
 $routes->get('/dashboard', 'Dashboard::index');
+
+// Bahan Baku
+$routes->get('/bahan', 'BahanBaku::index');

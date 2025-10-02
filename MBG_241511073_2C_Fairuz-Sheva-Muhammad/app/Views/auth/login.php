@@ -1,38 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
+<?= $this->extend('layouts/main') ?>
 
-<div class="container d-flex justify-content-center align-items-center vh-100">
+<?= $this->section('content') ?>
+<div class="row justify-content-center">
     <div class="col-md-4">
         <div class="card shadow">
             <div class="card-body">
-                <h3 class="mb-3 text-center">Login</h3>
+                <h4 class="card-title mb-3 text-center">Login</h4>
 
                 <?php if(session()->getFlashdata('error')): ?>
-                    <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+                    <div class="alert alert-danger"><?= session('error') ?></div>
                 <?php endif; ?>
 
-                <form method="post" action="/login">
+                <form action="/login" method="post">
+                    <?= csrf_field() ?>
                     <div class="mb-3">
                         <label>Email</label>
-                        <input type="text" name="email" class="form-control" required>
+                        <input type="email" name="email" class="form-control" value="<?= old('email') ?>" required>
                     </div>
-
                     <div class="mb-3">
                         <label>Password</label>
                         <input type="password" name="password" class="form-control" required>
                     </div>
-
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <button type="submit" class="btn btn-primary w-100">Masuk</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-</body>
-</html>
+<?= $this->endSection() ?>
