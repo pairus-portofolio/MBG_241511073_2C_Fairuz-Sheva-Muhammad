@@ -3,6 +3,7 @@
 
 <h3><?= $title ?></h3>
 <a href="/dashboard" class="btn btn-secondary mb-3">Kembali</a>
+<a href="/bahan/create" class="btn btn-primary mb-3">Tambah Bahan Baku</a>
 
 <table class="table table-bordered">
     <thead>

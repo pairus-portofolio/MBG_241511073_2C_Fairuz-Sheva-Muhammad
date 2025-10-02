@@ -26,3 +26,6 @@ $routes->get('/dashboard', 'Dashboard::index');
 
 // Bahan Baku
 $routes->get('/bahan', 'BahanBaku::index');
+$routes->get('/bahan/create', 'BahanBaku::create');
+$routes->post('/bahan/store', 'BahanBaku::store');
+
