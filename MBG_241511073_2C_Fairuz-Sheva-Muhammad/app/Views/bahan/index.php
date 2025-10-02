@@ -5,6 +5,15 @@
 <a href="/dashboard" class="btn btn-secondary mb-3">Kembali</a>
 <a href="/bahan/create" class="btn btn-primary mb-3">Tambah Bahan Baku</a>
 
+<?php if(session()->getFlashdata('success')): ?>
+    <div class="alert alert-success"><?= session('success') ?></div>
+<?php endif; ?>
+
+<?php if(session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger"><?= session('error') ?></div>
+<?php endif; ?>
+
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -45,9 +54,7 @@
                 <span class="badge <?= $badgeClass ?>"><?= ucfirst(str_replace('_', ' ', $status)) ?></span></td>
             <td>
                 <a href="/bahan/edit/<?= $row['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                <form action="/bahan/delete/<?= $row['id'] ?>" method="post" style="display:inline;" onsubmit="return confirm('Yakin ingin menghapus bahan ini?');">
-                    <?= csrf_field() ?>
-                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+               <a href="/bahan/confirm-delete/<?= $row['id'] ?>" class="btn btn-sm btn-danger">Hapus</a>
                 </form>
             </td>
         </tr>

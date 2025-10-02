@@ -73,5 +73,40 @@ class BahanBaku extends BaseController
     return redirect()->to('/bahan')->with('success', 'Bahan berhasil diperbarui');
 }
 
+// hapus bahan
+    public function confirmDelete($id)
+    {
+        $data['title'] = 'Konfirmasi Hapus Bahan Baku';
+        $data['bahan'] = $this->bahanModel->find($id);
+
+        if (!$data['bahan']) {
+        return redirect()->to('/bahan')->with('error', 'Bahan tidak ditemukan');
+    }
+
+    return view('bahan/confirm_delete', $data);
+    }
+
+// eksekusi hapus
+    public function delete($id)
+    {
+        $bahan = $this->bahanModel->find($id);
+
+        if (!$bahan) {
+            return redirect()->to('/bahan')->with('error', 'Bahan tidak ditemukan');
+    }
+
+    $today = date('Y-m-d');
+
+    if ($today >= $bahan['tanggal_kadaluwarsa']) {
+        $this->bahanModel->delete($id);
+        return redirect()->to('/bahan')->with('success', 'Bahan berhasil dihapus');
+    }
+
+    return redirect()->to('/bahan')->with('error', 'Bahan hanya bisa dihapus jika kadaluwarsa');
+}
+
+    
+
+
 
 }

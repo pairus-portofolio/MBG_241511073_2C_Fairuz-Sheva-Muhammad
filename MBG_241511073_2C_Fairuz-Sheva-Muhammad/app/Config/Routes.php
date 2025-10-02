@@ -17,6 +17,7 @@ $routes->set404Override();
 $routes->setAutoRoute(false);
 
 // Auth
+$routes->get('/', 'Auth::login');
 $routes->get('/login', 'Auth::login');
 $routes->post('/login', 'Auth::doLogin');
 $routes->get('/logout', 'Auth::logout');
@@ -29,6 +30,7 @@ $routes->get('/bahan', 'BahanBaku::index');
 $routes->get('/bahan/create', 'BahanBaku::create');
 $routes->post('/bahan/store', 'BahanBaku::store');
 $routes->get('/bahan/edit/(:num)', 'BahanBaku::edit/$1');
+$routes->get('/bahan/confirm-delete/(:num)', 'BahanBaku::confirmDelete/$1');
+$routes->post('/bahan/delete/(:num)', 'BahanBaku::delete/$1');
 $routes->post('/bahan/update/(:num)', 'BahanBaku::update/$1');
-
 
