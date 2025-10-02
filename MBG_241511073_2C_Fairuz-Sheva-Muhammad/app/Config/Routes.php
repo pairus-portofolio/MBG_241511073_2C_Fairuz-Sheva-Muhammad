@@ -28,4 +28,7 @@ $routes->get('/dashboard', 'Dashboard::index');
 $routes->get('/bahan', 'BahanBaku::index');
 $routes->get('/bahan/create', 'BahanBaku::create');
 $routes->post('/bahan/store', 'BahanBaku::store');
+$routes->get('/bahan/edit/(:num)', 'BahanBaku::edit/$1');
+$routes->post('/bahan/update/(:num)', 'BahanBaku::update/$1');
+
 

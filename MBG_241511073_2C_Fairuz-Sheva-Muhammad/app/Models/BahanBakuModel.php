@@ -16,8 +16,8 @@ class BahanBakuModel extends Model
     {
         return $this->select("*, 
             CASE 
-              WHEN CURRENT_DATE() >= tanggal_kadaluwarsa THEN 'kadaluwarsa'
               WHEN jumlah = 0 THEN 'habis'
+              WHEN CURRENT_DATE() >= tanggal_kadaluwarsa THEN 'kadaluwarsa'
               WHEN DATEDIFF(tanggal_kadaluwarsa, CURRENT_DATE()) <= 3 THEN 'segera_kadaluarsa'
               ELSE 'tersedia'
             END AS status_calc")

@@ -15,6 +15,7 @@
             <th>Tgl Masuk</th>
             <th>Tgl Kadaluwarsa</th>
             <th>Status</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +30,7 @@
             <td>
                 <?php
                 $status = $row['status_calc'];
-                $badgeClass = 'bg-secondary'; // default
+                $badgeClass = 'bg-secondary';
 
                 if ($status === 'kadaluwarsa') {
                     $badgeClass = 'bg-danger';
@@ -41,7 +42,13 @@
                     $badgeClass = 'bg-success';
                 }
                 ?>
-                <span class="badge <?= $badgeClass ?>"><?= $status ?></span>
+                <span class="badge <?= $badgeClass ?>"><?= ucfirst(str_replace('_', ' ', $status)) ?></span></td>
+            <td>
+                <a href="/bahan/edit/<?= $row['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                <form action="/bahan/delete/<?= $row['id'] ?>" method="post" style="display:inline;" onsubmit="return confirm('Yakin ingin menghapus bahan ini?');">
+                    <?= csrf_field() ?>
+                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                </form>
             </td>
         </tr>
     <?php endforeach; ?>
