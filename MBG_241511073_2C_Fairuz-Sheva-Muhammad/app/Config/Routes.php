@@ -34,3 +34,13 @@ $routes->get('/bahan/confirm-delete/(:num)', 'BahanBaku::confirmDelete/$1');
 $routes->post('/bahan/delete/(:num)', 'BahanBaku::delete/$1');
 $routes->post('/bahan/update/(:num)', 'BahanBaku::update/$1');
 
+// Permintaan
+$routes->get('/permintaan', 'Permintaan::index');
+$routes->get('/permintaan/create', 'Permintaan::create');
+$routes->post('/permintaan/store', 'Permintaan::store');
+
+// Detail Permintaan
+$routes->get('/permintaan/detail/(:num)', 'Permintaan::detail/$1');
+
+
+
