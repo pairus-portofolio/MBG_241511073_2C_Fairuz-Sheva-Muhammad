@@ -1,0 +1,44 @@
+CRITICAL - 2025-10-03 08:27:00 --> ArgumentCountError: Too few arguments to function CodeIgniter\HTTP\RedirectResponse::with(), 1 passed in C:\xampp\htdocs\Code Igniter\GIT\MBG_241511073_2C_Fairuz-Sheva-Muhammad\MBG_241511073_2C_Fairuz-Sheva-Muhammad\app\Controllers\BahanBaku.php on line 73 and exactly 2 expected
+[Method: POST, Route: bahan/update/8]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 132.
+ 1 APPPATH\Controllers\BahanBaku.php(73): CodeIgniter\HTTP\RedirectResponse->with('Bahan berhasil diupdate')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanBaku->update('8')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanBaku))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Code Igniter\\GIT\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\public\\index.php')
+CRITICAL - 2025-10-03 08:27:52 --> ArgumentCountError: Too few arguments to function CodeIgniter\HTTP\RedirectResponse::with(), 1 passed in C:\xampp\htdocs\Code Igniter\GIT\MBG_241511073_2C_Fairuz-Sheva-Muhammad\MBG_241511073_2C_Fairuz-Sheva-Muhammad\app\Controllers\BahanBaku.php on line 73 and exactly 2 expected
+[Method: POST, Route: bahan/update/15]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 132.
+ 1 APPPATH\Controllers\BahanBaku.php(73): CodeIgniter\HTTP\RedirectResponse->with('Bahan berhasil diupdate')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanBaku->update('15')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanBaku))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Code Igniter\\GIT\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\public\\index.php')
+CRITICAL - 2025-10-03 09:37:33 --> ErrorException: Undefined variable $validDetail
+[Method: POST, Route: permintaan/store]
+in APPPATH\Controllers\Permintaan.php on line 97.
+ 1 APPPATH\Controllers\Permintaan.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $validDetail', 'C:\\xampp\\htdocs\\Code Igniter\\GIT\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\app\\Controllers\\Permintaan.php', 97)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Permintaan->store()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Permintaan))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Code Igniter\\GIT\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\public\\index.php')
+CRITICAL - 2025-10-03 09:39:25 --> ErrorException: Undefined variable $validDetail
+[Method: POST, Route: permintaan/store]
+in APPPATH\Controllers\Permintaan.php on line 97.
+ 1 APPPATH\Controllers\Permintaan.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $validDetail', 'C:\\xampp\\htdocs\\Code Igniter\\GIT\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\app\\Controllers\\Permintaan.php', 97)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Permintaan->store()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Permintaan))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Code Igniter\\GIT\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\MBG_241511073_2C_Fairuz-Sheva-Muhammad\\public\\index.php')

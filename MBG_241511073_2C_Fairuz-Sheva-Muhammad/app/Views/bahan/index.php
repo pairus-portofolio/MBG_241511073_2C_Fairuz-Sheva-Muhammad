@@ -4,16 +4,6 @@
 <h3><?= $title ?></h3>
 <a href="/dashboard" class="btn btn-secondary mb-3">Kembali</a>
 <a href="/bahan/create" class="btn btn-primary mb-3">Tambah Bahan Baku</a>
-
-<?php if(session()->getFlashdata('success')): ?>
-    <div class="alert alert-success"><?= session('success') ?></div>
-<?php endif; ?>
-
-<?php if(session()->getFlashdata('error')): ?>
-    <div class="alert alert-danger"><?= session('error') ?></div>
-<?php endif; ?>
-
-
 <table class="table table-bordered">
     <thead>
         <tr>

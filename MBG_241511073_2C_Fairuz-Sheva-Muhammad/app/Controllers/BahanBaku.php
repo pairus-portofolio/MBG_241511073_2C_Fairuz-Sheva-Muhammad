@@ -70,7 +70,7 @@ class BahanBaku extends BaseController
             'tanggal_kadaluwarsa' => $this->request->getPost('tanggal_kadaluwarsa'),
     ]);
 
-    return redirect()->to('/bahan')->with('success', 'Bahan berhasil diperbarui');
+    return redirect()->to('/bahan')->with('success', 'Bahan berhasil diupdate');
 }
 
 // hapus bahan

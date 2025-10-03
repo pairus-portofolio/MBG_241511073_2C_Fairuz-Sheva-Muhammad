@@ -3,29 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= esc($title ?? 'MBG App') ?></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?= esc($title ?? 'MBG App') ?> - Pemantauan Bahan Baku</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Corporate Theme with Dark Navbar & Cool White Background */
+        :root {
+            --navbar-primary: #0d57dfff;
+            --navbar-secondary: #87bde3ff;
+            --bg-main: #d7e4efff;
+            --accent-color: #0055ffff;
+        }
+        
+        body {
+            background-color: var(--bg-main) !important;
+        }
+        
+        .navbar-custom {
+            background: linear-gradient(135deg, var(--navbar-primary) 0%, var(--navbar-secondary) 100%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .navbar-custom .navbar-brand {
+            font-weight: 600;
+        }
+        
+        .navbar-custom .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            transition: color 0.3s;
+        }
+        
+        .navbar-custom .nav-link:hover {
+            color: white !important;
+        }
+        
+        .navbar-custom .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn-teal {
+            background-color: var(--navbar-primary);
+            border-color: var(--navbar-primary);
+            color: white;
+        }
+        
+        .btn-teal:hover {
+            background-color: var(--navbar-secondary);
+            border-color: var(--navbar-secondary);
+            color: white;
+        }
+        
+        .badge-teal {
+            background-color: var(--accent-color);
+        }
+    </style>
+    
+    <!-- Additional Custom CSS -->
+    <?= $this->renderSection('styles') ?>
 </head>
-<body class="bg-light">
+<body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom mb-4">
         <div class="container">
-            <a class="navbar-brand" href="#">Aplikasi pemantauan bahan baku MBG</a>
+            <a class="navbar-brand" href="<?= base_url('/') ?>">
+                Aplikasi Pemantauan Bahan Baku MBG
+            </a>
+            
             <?php if(session()->get('logged_in')): ?>
-            <div class="ms-auto">
-                <span class="text-white me-3"><?= esc(session('name')) ?> (<?= esc(session('role')) ?>)</span>
-                <a href="/logout" class="btn btn-outline-light btn-sm">Logout</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <span class="nav-link">
+                            <?= esc(session('name')) ?> 
+                            <span class="badge badge-teal"><?= esc(session('role')) ?></span>
+                        </span>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('/logout') ?>" class="btn btn-outline-light btn-sm ms-2">Logout</a>
+                    </li>
+                </ul>
             </div>
             <?php endif; ?>
         </div>
     </nav>
 
-    <!-- Konten -->
+    <!-- Flash Messages -->
+    <?php if(session()->getFlashdata('success')): ?>
     <div class="container">
-        <?= $this->renderSection('content') ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= session()->getFlashdata('success') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     </div>
+    <?php endif; ?>
 
+    <?php if(session()->getFlashdata('error')): ?>
+    <div class="container">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?= session()->getFlashdata('error') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <?php if(session()->getFlashdata('info')): ?>
+    <div class="container">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <?= session()->getFlashdata('info') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Main Content -->
+    <main class="container">
+        <?= $this->renderSection('content') ?>
+    </main>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <?= $this->renderSection('scripts') ?>
 </body>
 </html>
