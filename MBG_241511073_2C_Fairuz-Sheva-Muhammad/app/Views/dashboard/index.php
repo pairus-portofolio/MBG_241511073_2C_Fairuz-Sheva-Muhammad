@@ -10,7 +10,7 @@
 
                 <?php if(session('role') === 'gudang'): ?>
                     <a href="/bahan" class="btn btn-success me-2">Kelola Bahan Baku</a>
-                    <a href="#" class="btn btn-warning">Proses Permintaan</a>
+                    <a href="/gudang/permintaan" class="btn btn-warning">Proses Permintaan</a>
                 <?php elseif(session('role') === 'dapur'): ?>
                     <a href="/permintaan/create" class="btn btn-success">Buat Permintaan</a>
                     <a href="/permintaan" class="btn btn-warning">Lihat Status Permintaan</a>

@@ -1,0 +1,55 @@
+:root {
+  --navbar-primary: #0d57dfff;
+  --navbar-secondary: #87bde3ff;
+  --accent-color: #0055ffff;
+}
+
+body {
+    background: linear-gradient(to bottom, #f4f7fe, #cad5e9, #90b4e0);
+    height: 100vh;
+    margin: 0;
+}
+
+
+.navbar-custom {
+  background: linear-gradient(
+    135deg,
+    var(--navbar-primary) 0%,
+    var(--navbar-secondary) 100%
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: 600;
+}
+
+.navbar-custom .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.3s;
+}
+
+.navbar-custom .nav-link:hover {
+  color: white !important;
+}
+
+.navbar-custom .dropdown-menu {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-teal {
+  background-color: var(--navbar-primary);
+  border-color: var(--navbar-primary);
+  color: white;
+}
+
+.btn-teal:hover {
+  background-color: var(--navbar-secondary);
+  border-color: var(--navbar-secondary);
+  color: white;
+}
+
+.badge-teal {
+  background-color: var(--accent-color);
+}

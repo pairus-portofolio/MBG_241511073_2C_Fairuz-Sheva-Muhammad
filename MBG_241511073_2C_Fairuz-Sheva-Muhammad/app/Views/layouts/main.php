@@ -8,63 +8,7 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Custom Styles -->
-    <style>
-        /* Corporate Theme with Dark Navbar & Cool White Background */
-        :root {
-            --navbar-primary: #0d57dfff;
-            --navbar-secondary: #87bde3ff;
-            --bg-main: #d7e4efff;
-            --accent-color: #0055ffff;
-        }
-        
-        body {
-            background-color: var(--bg-main) !important;
-        }
-        
-        .navbar-custom {
-            background: linear-gradient(135deg, var(--navbar-primary) 0%, var(--navbar-secondary) 100%);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .navbar-custom .navbar-brand {
-            font-weight: 600;
-        }
-        
-        .navbar-custom .nav-link {
-            color: rgba(255,255,255,0.9) !important;
-            transition: color 0.3s;
-        }
-        
-        .navbar-custom .nav-link:hover {
-            color: white !important;
-        }
-        
-        .navbar-custom .dropdown-menu {
-            border: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .btn-teal {
-            background-color: var(--navbar-primary);
-            border-color: var(--navbar-primary);
-            color: white;
-        }
-        
-        .btn-teal:hover {
-            background-color: var(--navbar-secondary);
-            border-color: var(--navbar-secondary);
-            color: white;
-        }
-        
-        .badge-teal {
-            background-color: var(--accent-color);
-        }
-    </style>
-    
-    <!-- Additional Custom CSS -->
-    <?= $this->renderSection('styles') ?>
+    <link rel="stylesheet" href="<?= base_url('assets/style.css') ?>">
 </head>
 <body>
 

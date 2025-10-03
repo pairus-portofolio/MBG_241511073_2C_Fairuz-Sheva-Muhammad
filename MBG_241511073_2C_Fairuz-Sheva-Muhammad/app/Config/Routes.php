@@ -42,5 +42,13 @@ $routes->post('/permintaan/store', 'Permintaan::store');
 // Detail Permintaan
 $routes->get('/permintaan/detail/(:num)', 'Permintaan::detail/$1');
 
+// Persetujuan
+// Gudang - Persetujuan Permintaan
+$routes->get('/gudang/permintaan', 'Gudang::index');
+$routes->get('/gudang/permintaan/detail/(:num)', 'Gudang::detail/$1');
+$routes->post('/gudang/permintaan/approve/(:num)', 'Gudang::approve/$1');
+$routes->post('/gudang/permintaan/reject/(:num)', 'Gudang::reject/$1');
+
+
 
 
